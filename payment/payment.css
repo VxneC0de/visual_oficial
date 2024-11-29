@@ -40,7 +40,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 1000;
     width: 100%;
     background: #ffffff;
     box-shadow: 0px 2px 5px #347928;

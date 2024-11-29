@@ -421,39 +421,7 @@
             console.log('Tarjeta seleccionada');
         });
     
-        // Funcionalidad para la subida de imágenes
-        const selectImages = document.querySelectorAll('.select-image');
-        selectImages.forEach(selectImage => {
-            const inputFile = selectImage.parentElement.querySelector('input[type="file"]');
-            const imgArea = selectImage.parentElement.querySelector('.img-area');
-            
-            selectImage.addEventListener('click', () => {
-                inputFile.click();
-            });
-            
-            inputFile.addEventListener('change', () => {
-                const image = inputFile.files[0];
-                if (image.size < 2000000) {
-                    const reader = new FileReader();
-                    reader.onload = () => {
-                        // Elimina todas las imágenes previas
-                        const allImg = imgArea.querySelectorAll('img');
-                        allImg.forEach(img => img.remove());
-                        // Añade la nueva imagen
-                        const imgUrl = reader.result;
-                        const img = document.createElement('img');
-                        img.src = imgUrl;
-                        imgArea.appendChild(img);
-                        imgArea.classList.add('active');
-                        imgArea.dataset.img = image.name;
-                    };
-                    
-                    reader.readAsDataURL(image);
-                } else {
-                    alert("La imagen debe ser menor a 2MB");
-                }
-            });
-        });
+
     });
     
         </script>
